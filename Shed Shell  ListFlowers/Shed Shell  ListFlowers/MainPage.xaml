@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Shed_Shell__ListFlowers"
+             x:Class="Shed_Shell__ListFlowers.MainShell">
+
+    <FlyoutItem Title="На первую">
+        <ShellContent Title="Левая часть" Route="List1"  ContentTemplate="{DataTemplate local:Page1}"/>
+        <ShellContent Title="Правая часть" Route="List2"  ContentTemplate="{DataTemplate local:Page2}"/>
+    </FlyoutItem>
+    <FlyoutItem Title="На вторую">
+        <ShellContent Title="Западная хурма" Route="List3"  ContentTemplate="{DataTemplate local:Page3}"/>
+        <ShellContent Title="Восточная халва" Route="List4"  ContentTemplate="{DataTemplate local:Page4}"/>
+    </FlyoutItem>
+
+
+</Shell>
