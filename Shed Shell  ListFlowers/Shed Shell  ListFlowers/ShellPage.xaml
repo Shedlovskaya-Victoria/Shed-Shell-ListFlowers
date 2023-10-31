@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:local="clr-namespace:Shed_Shell__ListFlowers"
+             x:Class="Shed_Shell__ListFlowers.ShellPage">
+
+    <TabBar>
+        <ShellContent Route="Log"  ContentTemplate="{DataTemplate local:LoginPage}"/>
+    </TabBar>
+    <FlyoutItem Title="Список цветов">
+        <ShellContent Route="Flw"  ContentTemplate="{DataTemplate local:FlowersList}"/>
+    </FlyoutItem>
+    <FlyoutItem Title="Список категорий">
+        <ShellContent Route="Categ"  ContentTemplate="{DataTemplate local:CategoriesList}"/>
+    </FlyoutItem>
+    
+</Shell>

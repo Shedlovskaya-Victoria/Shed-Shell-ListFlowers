@@ -10,7 +10,7 @@ namespace Shed_Shell__ListFlowers
         {
             InitializeComponent();
 
-            MainPage = new MainShell();
+            MainPage = new ShellPage();
         }
 
         protected override void OnStart()

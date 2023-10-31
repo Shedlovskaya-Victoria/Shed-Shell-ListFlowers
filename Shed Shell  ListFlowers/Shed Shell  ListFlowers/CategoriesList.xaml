@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Shed_Shell__ListFlowers.CategoriesList"
+             Title="Список категорий">
+    <ContentPage.Content>
+       
+        <StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Button Text="доб" Clicked="AddC" x:Name="AddButtonCategory"/>
+                <Button Text="ред" Clicked="EditC"/>
+                <Button Text="уд" Clicked="DeleteC"/>
+            </StackLayout>
+            <CollectionView ItemsSource="{Binding Categories}" SelectionMode="Single"
+                 SelectedItem="{Binding SelectedCategory}">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Vertical" />
+                </CollectionView.ItemsLayout>
+                <CollectionView.Header>
+                    <Grid >
+                        <StackLayout Orientation="Horizontal" Padding="6" HorizontalOptions="Center">
+                            <Label  TextColor="Black" FontSize="24" Text="Id"/>
+                            <Label TextColor="Black" FontSize="24" Text="Название" />
+                        </StackLayout>
+                    </Grid>
+                </CollectionView.Header>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid >
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="450"/>
+                                <ColumnDefinition />
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <StackLayout Orientation="Horizontal" >
+                                <Label HorizontalOptions="Start" Grid.Column="0" Grid.Row="1"
+     FontSize="18" TextColor="DarkBlue" Text="{Binding Id}"/>
+                                <Label  HorizontalOptions="Center" Grid.Column="0" Grid.Row="1" FontSize="18"   
+     TextColor="DarkBlue" Text="{Binding Title}"/>
+                            </StackLayout>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+          
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

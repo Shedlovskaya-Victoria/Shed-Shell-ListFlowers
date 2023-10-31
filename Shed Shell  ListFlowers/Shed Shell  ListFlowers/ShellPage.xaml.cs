@@ -10,11 +10,12 @@ using Xamarin.Forms.Xaml;
 namespace Shed_Shell__ListFlowers
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class Page3 : ContentPage
+	public partial class ShellPage : Shell
 	{
-		public Page3 ()
+		public ShellPage ()
 		{
-			InitializeComponent ();
+			InitializeComponent();
+			BindingContext = this;
 		}
 	}
 }

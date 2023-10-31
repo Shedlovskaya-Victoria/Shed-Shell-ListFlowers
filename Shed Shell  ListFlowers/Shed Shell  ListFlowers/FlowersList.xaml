@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Shed_Shell__ListFlowers.FlowersList"
+             Title="Список цветов">
+    <ContentPage.Content>
+    
+    <StackLayout>
+          
+            <!---вывод списка-->
+            <Button Text="Add New" Clicked="AddFlower"/>
+            <ListView ItemsSource="{Binding Flowers}" SelectionMode="Single"
+                            SelectedItem="{Binding SelectedFlower}">
+                
+                <ListView.Header>
+                    <Grid>
+                        <StackLayout  Orientation="Horizontal" Padding="6" HorizontalOptions="Center">
+                            <Label  TextColor="Black" FontSize="24" Text="Название"/>
+                            <Label TextColor="Black" FontSize="24" Text="Цена" />
+                            <Label TextColor="Black" FontSize="24" Text="Категория" />
+                        </StackLayout>
+                    </Grid>
+                </ListView.Header>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Label Text="{Binding Name}" />
+                            <ViewCell.ContextActions>
+                                <MenuItem Text="Edit" Clicked="EditFlower"/>
+                                <MenuItem Text="Delete" Clicked="DeleteFlower"/>
+                            </ViewCell.ContextActions>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

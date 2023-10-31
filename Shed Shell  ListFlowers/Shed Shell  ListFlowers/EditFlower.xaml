@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Shed_Shell__ListFlowers.EditFlower">
+    <ContentPage.Content>
+        <!---окошко редактирования-->
+        <StackLayout 
+                     HorizontalOptions="Center"
+                     VerticalOptions="Center">
+            <Label Text="Напишите название цветка: "/>
+            <Entry Text="{Binding NewFlower.Name}"/>
+            <Label Text="Напишите цену цветка: "/>
+            <Entry Text="{Binding NewFlower.Cost}"/>
+            <Label Text="Выберите категорию цветка: "/>
+            <Picker ItemsSource="{Binding Categories}"  
+                    ItemDisplayBinding="{Binding Title}"
+                    SelectedItem="{Binding NewFlower.Category}"/>
+            <StackLayout Orientation="Horizontal" Padding="2">
+                <Button Text="OK" Clicked="Save"/>
+                <Button Text="Close" Clicked="CloseEditForm" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
