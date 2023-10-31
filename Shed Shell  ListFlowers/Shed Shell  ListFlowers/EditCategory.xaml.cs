@@ -16,6 +16,7 @@ namespace Shed_Shell__ListFlowers
     public partial class EditCategory : ContentPage, INotifyPropertyChanged
     {
         private CategoryFlower editFlower;
+        private bool Edit;
 
         public event PropertyChangedEventHandler PropertyChanged;
         void Signal([CallerMemberName] string prop = null)
@@ -41,7 +42,6 @@ namespace Shed_Shell__ListFlowers
         {
             CheskSeleced();
             BD Bd = new BD();
-            AddButtonCategory.IsVisible = true;
             if (!Edit)
             {
                 //  NewFlower.Category = SelectedFlower.Category;
@@ -53,6 +53,15 @@ namespace Shed_Shell__ListFlowers
                 Edit = false;
             }
             GoBack();
+        }
+
+        private async void CheskSeleced()
+        {
+            if (EditFlower == null)
+            {
+                await DisplayAlert("Ошибка", "Выберите товар", "Понял. Исправлюсь. Сохранюсь.");
+                return;
+            }
         }
 
         private void CloseEditFormC(object sender, EventArgs e)

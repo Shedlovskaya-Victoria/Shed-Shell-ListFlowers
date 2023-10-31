@@ -1,0 +1,20 @@
+C:\Users\Student\source\repos\Shed Shell  ListFlowers\Shed Shell  ListFlowers\Shed Shell  ListFlowers\bin\Debug\netstandard2.0\Shed Shell  ListFlowers.deps.json
+C:\Users\Student\source\repos\Shed Shell  ListFlowers\Shed Shell  ListFlowers\Shed Shell  ListFlowers\bin\Debug\netstandard2.0\Shed Shell  ListFlowers.dll
+C:\Users\Student\source\repos\Shed Shell  ListFlowers\Shed Shell  ListFlowers\Shed Shell  ListFlowers\bin\Debug\netstandard2.0\ref\Shed Shell  ListFlowers.dll
+C:\Users\Student\source\repos\Shed Shell  ListFlowers\Shed Shell  ListFlowers\Shed Shell  ListFlowers\bin\Debug\netstandard2.0\Shed Shell  ListFlowers.pdb
+C:\Users\Student\source\repos\Shed Shell  ListFlowers\Shed Shell  ListFlowers\Shed Shell  ListFlowers\obj\Debug\netstandard2.0\Shed Shell  ListFlowers.csproj.AssemblyReference.cache
+C:\Users\Student\source\repos\Shed Shell  ListFlowers\Shed Shell  ListFlowers\Shed Shell  ListFlowers\obj\Debug\netstandard2.0\Shed Shell  ListFlowers.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Student\source\repos\Shed Shell  ListFlowers\Shed Shell  ListFlowers\Shed Shell  ListFlowers\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\Student\source\repos\Shed Shell  ListFlowers\Shed Shell  ListFlowers\Shed Shell  ListFlowers\obj\Debug\netstandard2.0\CategoriesList.xaml.g.cs
+C:\Users\Student\source\repos\Shed Shell  ListFlowers\Shed Shell  ListFlowers\Shed Shell  ListFlowers\obj\Debug\netstandard2.0\EditCategory.xaml.g.cs
+C:\Users\Student\source\repos\Shed Shell  ListFlowers\Shed Shell  ListFlowers\Shed Shell  ListFlowers\obj\Debug\netstandard2.0\EditFlower.xaml.g.cs
+C:\Users\Student\source\repos\Shed Shell  ListFlowers\Shed Shell  ListFlowers\Shed Shell  ListFlowers\obj\Debug\netstandard2.0\FlowersList.xaml.g.cs
+C:\Users\Student\source\repos\Shed Shell  ListFlowers\Shed Shell  ListFlowers\Shed Shell  ListFlowers\obj\Debug\netstandard2.0\LoginPage.xaml.g.cs
+C:\Users\Student\source\repos\Shed Shell  ListFlowers\Shed Shell  ListFlowers\Shed Shell  ListFlowers\obj\Debug\netstandard2.0\ShellPage.xaml.g.cs
+C:\Users\Student\source\repos\Shed Shell  ListFlowers\Shed Shell  ListFlowers\Shed Shell  ListFlowers\obj\Debug\netstandard2.0\Shed Shell  ListFlowers.AssemblyInfoInputs.cache
+C:\Users\Student\source\repos\Shed Shell  ListFlowers\Shed Shell  ListFlowers\Shed Shell  ListFlowers\obj\Debug\netstandard2.0\Shed Shell  ListFlowers.AssemblyInfo.cs
+C:\Users\Student\source\repos\Shed Shell  ListFlowers\Shed Shell  ListFlowers\Shed Shell  ListFlowers\obj\Debug\netstandard2.0\Shed Shell  ListFlowers.csproj.CoreCompileInputs.cache
+C:\Users\Student\source\repos\Shed Shell  ListFlowers\Shed Shell  ListFlowers\Shed Shell  ListFlowers\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\Student\source\repos\Shed Shell  ListFlowers\Shed Shell  ListFlowers\Shed Shell  ListFlowers\obj\Debug\netstandard2.0\Shed Shell  ListFlowers.dll
+C:\Users\Student\source\repos\Shed Shell  ListFlowers\Shed Shell  ListFlowers\Shed Shell  ListFlowers\obj\Debug\netstandard2.0\refint\Shed Shell  ListFlowers.dll
+C:\Users\Student\source\repos\Shed Shell  ListFlowers\Shed Shell  ListFlowers\Shed Shell  ListFlowers\obj\Debug\netstandard2.0\Shed Shell  ListFlowers.pdb
