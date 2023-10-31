@@ -53,7 +53,7 @@ namespace Shed_Shell__ListFlowers
                 return;
 
             var a = Flowers.FirstOrDefault(s => s.Id == newCategory.Id);
-            a.Name = newCategory.NA;
+            a.Name = newCategory.Title;
            /// int index = Categories.IndexOf(newCategory);
             //Categories[index] = newCategory;
 
