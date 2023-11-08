@@ -35,7 +35,15 @@ namespace Shed_Shell__ListFlowers
         {
             InitializeComponent();
             BindingContext = this;
-            EditFlower = (CategoryFlower)BD.Get();
+            if(BD.Get() == null)
+            {
+                EditFlower = new CategoryFlower();
+            }
+            else
+            {
+                EditFlower = (CategoryFlower)BD.Get();
+                Edit = true;
+            }
         }
 
         private void SaveC(object sender, EventArgs e)
@@ -53,6 +61,7 @@ namespace Shed_Shell__ListFlowers
                 Edit = false;
             }
             GoBack();
+            BD.Set(null);
         }
 
         private async void CheskSeleced()
@@ -66,7 +75,9 @@ namespace Shed_Shell__ListFlowers
 
         private void CloseEditFormC(object sender, EventArgs e)
         {
-           GoBack();
+            GoBack();
+            Edit = false;
+            BD.Set(null);
         }
         void GoBack()
         {

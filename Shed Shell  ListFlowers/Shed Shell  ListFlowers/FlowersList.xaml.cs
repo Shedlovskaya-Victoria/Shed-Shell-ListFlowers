@@ -20,7 +20,7 @@ namespace Shed_Shell__ListFlowers
         private Flower selectedFlower;
 
         public event PropertyChangedEventHandler PropertyChanged;
-        public ObservableCollection<Flower> Flowers { 
+        public List<Flower> Flowers { 
             get => flowers;
             set
             {
@@ -39,7 +39,7 @@ namespace Shed_Shell__ListFlowers
         
         bool Edit = false;
         private ObservableCollection<CategoryFlower> categories;
-        private ObservableCollection<Flower> flowers;
+        private List<Flower> flowers;
 
         public ObservableCollection<CategoryFlower> Categories { 
             get => categories;
@@ -63,17 +63,27 @@ namespace Shed_Shell__ListFlowers
                 new CategoryFlower { Title = "1 ctg" },
                 new CategoryFlower { Title = "2 ctg" } };
             CategoryFlower categoryFlower = new CategoryFlower(); categoryFlower.Title = "ExCtg";
-            Flower newF = new Flower(); newF.Name = "FirstExFlwr"; newF.Cost = 32; newF.Category = categoryFlower;
-            GetFlowerList();
-            Bd.AddFlower(newF);
-            GetFlowerList();
+           // Flower newF = new Flower(); newF.Name = "FirstExFlwr"; newF.Cost = 32; newF.Category = categoryFlower;
+            GetDBFlowerList();
+           // GetFlowerList();
+           //  Bd.AddFlower(newF);
+           //   GetFlowerList();
             GetCategoriesList();
             Routing.RegisterRoute("Edit", typeof(EditFlower));
+        }
+        private void GetDBFlowerList()
+        {
+           var Flower = new Flower { Id = 56, Name = "Name " };
+
+            App.dboContext.Flower.Add(Flower);
+            App.dboContext.SaveChanges();
+            Flowers = App.dboContext.Flower.ToList();
+
         }
 
         private void GetFlowerList()
         {
-            Flowers = BD.GetInstance();
+            Flowers = BD.GetInstance().ToList();
             Signal(nameof(Flowers));
         }
 
@@ -86,7 +96,9 @@ namespace Shed_Shell__ListFlowers
         private async void AddFlower(object sender, EventArgs e)
         {
             await Shell.Current.GoToAsync($"Edit?ID={null}");
-            GetFlowerList();
+            //    GetFlowerList();
+            GetDBFlowerList();
+
         }
 
         private async void DeleteFlower(object sender, EventArgs e)
@@ -98,7 +110,9 @@ namespace Shed_Shell__ListFlowers
             }
             BD Bd = new BD();
             Bd.DeleteFlower(SelectedFlower);
-            GetFlowerList();
+            // GetFlowerList();
+            GetDBFlowerList();
+
         }
 
         private async void EditFlower(object sender, EventArgs e)
@@ -109,7 +123,9 @@ namespace Shed_Shell__ListFlowers
                 return;
             }
             await Shell.Current.GoToAsync($"Edit?ID={SelectedFlower.Id}");
-            GetFlowerList();
+            //  GetFlowerList();
+            GetDBFlowerList();
+
         }
     }
 }

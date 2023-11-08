@@ -17,7 +17,6 @@ namespace Shed_Shell__ListFlowers
 	public partial class CategoriesList : ContentPage, INotifyPropertyChanged
 	{
         private CategoryFlower selectedCategory;
-        private CategoryFlower newCategory;
 
         public event PropertyChangedEventHandler PropertyChanged;
         void Signal([CallerMemberName] string prop = null)
@@ -29,14 +28,6 @@ namespace Shed_Shell__ListFlowers
             set
             {
                 selectedCategory = value;
-                Signal();
-            }
-        }
-        public CategoryFlower NewCategory { 
-            get => newCategory;
-            set
-            {
-                newCategory = value;
                 Signal();
             }
         }
@@ -55,7 +46,6 @@ namespace Shed_Shell__ListFlowers
         public CategoriesList ()
 		{
 			InitializeComponent ();
-			BindingContext = this;
             BindingContext = this;
             GetCategoriesList();
             BD bD = new BD();
@@ -67,7 +57,6 @@ namespace Shed_Shell__ListFlowers
 
         private void GetCategoriesList()
         {
-            BD BD = new BD();
             Categories = BD.GetCategories();
             Signal(nameof(Categories));
         }
@@ -84,6 +73,7 @@ namespace Shed_Shell__ListFlowers
             CheskSeleced();
             BD.Set(SelectedCategory);
             await Shell.Current.GoToAsync("EditCtg");
+            GetCategoriesList();
         }
 
         private async void DeleteC(object sender, EventArgs e)
@@ -93,24 +83,11 @@ namespace Shed_Shell__ListFlowers
             Bd.DeleteCategory(SelectedCategory);
             GetCategoriesList();
         }
-
-        private void CloseEditFormC(object sender, EventArgs e)
-        {
-            AddButtonCategory.IsVisible = true;
-            NewCategory = new CategoryFlower();
-        }
-
-        private void SaveC(object sender, EventArgs e)
-        {
-            
-            NewCategory = new CategoryFlower();
-            SelectedCategory = null;
-            GetCategoriesList();
-        }
-
         private async void AddC(object sender, EventArgs e)
         {
             await Shell.Current.GoToAsync("EditCtg");
+            GetCategoriesList();
+
         }
     }
 }

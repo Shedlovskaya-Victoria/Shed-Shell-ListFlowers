@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Shed_Shell__ListFlowers.DTO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,10 +13,12 @@ namespace Shed_Shell__ListFlowers
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class ShellPage : Shell
 	{
-		public ShellPage ()
+
+        public ShellPage ()
 		{
 			InitializeComponent();
 			BindingContext = this;
+			
 		}
 	}
 }

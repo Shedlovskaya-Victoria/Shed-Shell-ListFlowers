@@ -52,11 +52,8 @@ namespace Shed_Shell__ListFlowers
             if (newCategory == null)
                 return;
 
-            var a = Flowers.FirstOrDefault(s => s.Id == newCategory.Id);
-            a.Name = newCategory.Title;
-           /// int index = Categories.IndexOf(newCategory);
-            //Categories[index] = newCategory;
-
+            var a = Categories.FirstOrDefault(s => s.Id == newCategory.Id);
+            a.Title = newCategory.Title;
         }
         public void AddFlower(Flower flower)
         {
@@ -70,7 +67,6 @@ namespace Shed_Shell__ListFlowers
                 Id = Incrementation(),
                 Name = flower.Name,
                 Cost = flower.Cost,
-                Category = flower.Category,
             });
         }
         public void EditFlower(Flower newFlower)
@@ -83,7 +79,6 @@ namespace Shed_Shell__ListFlowers
             var a = Flowers.FirstOrDefault(s => s.Id == newFlower.Id);
             a.Cost = newFlower.Cost;
             a.Name = newFlower.Name;
-            a.Category = newFlower.Category;
         }
         public void DeleteFlower(Flower flower)
         {
