@@ -49,7 +49,7 @@ namespace Shed_Shell__ListFlowers
         }
         public void EditCategory(CategoryFlower newCategory)
         {
-            if (newCategory == null)
+            if (newCategory.Title == null)
                 return;
 
             var a = Categories.FirstOrDefault(s => s.Id == newCategory.Id);
@@ -102,6 +102,19 @@ namespace Shed_Shell__ListFlowers
         public static object Get()
         {
            return Obj;
+        }
+
+        public static async void ChekNull(object obj)
+        {
+            if (obj == null)
+            {
+                ErorMessage();
+                return;
+            }
+        }
+        private async static void ErorMessage()
+        {
+            await App.Current.MainPage.DisplayAlert("Ошибка", "Выберите товар", "Понял. Исправлюсь. Сохранюсь.");
         }
     }
 }

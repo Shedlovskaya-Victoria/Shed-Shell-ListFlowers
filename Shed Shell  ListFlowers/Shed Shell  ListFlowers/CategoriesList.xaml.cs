@@ -70,7 +70,7 @@ namespace Shed_Shell__ListFlowers
         }
         private async void EditC(object sender, EventArgs e)
         {
-            CheskSeleced();
+            BD.ChekNull(SelectedCategory);
             BD.Set(SelectedCategory);
             await Shell.Current.GoToAsync("EditCtg");
             GetCategoriesList();

@@ -9,10 +9,10 @@
           
             <!---вывод списка-->
             <Button Text="Add New" Clicked="AddFlower"/>
-            <ListView ItemsSource="{Binding Flowers}" SelectionMode="Single"
+            <CollectionView ItemsSource="{Binding Flowers}" SelectionMode="Single"
                             SelectedItem="{Binding SelectedFlower}">
-                
-                <ListView.Header>
+
+                <CollectionView.Header>
                     <Grid>
                         <StackLayout  Orientation="Horizontal" Padding="6" HorizontalOptions="Center">
                             <Label  TextColor="Black" FontSize="24" Text="Название"/>
@@ -20,19 +20,26 @@
                             <Label TextColor="Black" FontSize="24" Text="Категория" />
                         </StackLayout>
                     </Grid>
-                </ListView.Header>
-                <ListView.ItemTemplate>
+                </CollectionView.Header>
+                <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <ViewCell>
+                        <SwipeView>
+                            
+                            <SwipeView.BottomItems>
+                                <SwipeItems>
+                                    <SwipeItem Text="уdалить"
+                                               BackgroundColor="RosyBrown"
+                                               Command="{Binding Remove}"
+                                               CommandParameter="{Binding .}"/>
+                                </SwipeItems>
+                            </SwipeView.BottomItems>
+                        <StackLayout>
                             <Label Text="{Binding Name}" />
-                            <ViewCell.ContextActions>
-                                <MenuItem Text="Edit" Clicked="EditFlower"/>
-                                <MenuItem Text="Delete" Clicked="DeleteFlower"/>
-                            </ViewCell.ContextActions>
-                        </ViewCell>
+                        </StackLayout>
+                        </SwipeView>
                     </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

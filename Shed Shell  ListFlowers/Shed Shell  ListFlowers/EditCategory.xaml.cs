@@ -48,7 +48,7 @@ namespace Shed_Shell__ListFlowers
 
         private void SaveC(object sender, EventArgs e)
         {
-            CheskSeleced();
+            BD.ChekNull(EditFlower);
             BD Bd = new BD();
             if (!Edit)
             {
@@ -62,15 +62,6 @@ namespace Shed_Shell__ListFlowers
             }
             GoBack();
             BD.Set(null);
-        }
-
-        private async void CheskSeleced()
-        {
-            if (EditFlower == null)
-            {
-                await DisplayAlert("Ошибка", "Выберите товар", "Понял. Исправлюсь. Сохранюсь.");
-                return;
-            }
         }
 
         private void CloseEditFormC(object sender, EventArgs e)

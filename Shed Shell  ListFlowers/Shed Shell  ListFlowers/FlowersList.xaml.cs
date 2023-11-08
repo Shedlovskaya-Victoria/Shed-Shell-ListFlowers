@@ -1,4 +1,5 @@
 ﻿using Shed_Shell__ListFlowers.DTO;
+using Shed_Shell__ListFlowers.Tools;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -49,6 +50,9 @@ namespace Shed_Shell__ListFlowers
                 Signal();
             }
         }
+
+        public CustomCommand<Flower> Remove { get; private set; }
+
         void Signal([CallerMemberName] string prop = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(prop));
@@ -57,28 +61,37 @@ namespace Shed_Shell__ListFlowers
 		{
 			InitializeComponent();
 			BindingContext = this;
-            BD Bd = new BD();
-            GetCategoriesList();
-            Categories = new ObservableCollection<CategoryFlower> {
+
+            Flowers = App.dboContext.Flower.ToList();
+
+          //  GetCategoriesList();
+           /* Categories = new ObservableCollection<CategoryFlower> {
                 new CategoryFlower { Title = "1 ctg" },
                 new CategoryFlower { Title = "2 ctg" } };
             CategoryFlower categoryFlower = new CategoryFlower(); categoryFlower.Title = "ExCtg";
+           */
            // Flower newF = new Flower(); newF.Name = "FirstExFlwr"; newF.Cost = 32; newF.Category = categoryFlower;
             GetDBFlowerList();
            // GetFlowerList();
            //  Bd.AddFlower(newF);
            //   GetFlowerList();
-            GetCategoriesList();
+           // GetCategoriesList();
             Routing.RegisterRoute("Edit", typeof(EditFlower));
+
+            Remove = new CustomCommand<Flower>( (item) =>
+            {
+                BD.ChekNull(SelectedFlower);
+                App.dboContext.Flower.Remove(item);
+                App.dboContext.SaveChanges();
+                GetDBFlowerList();
+            });
         }
         private void GetDBFlowerList()
-        {
-           var Flower = new Flower { Id = 56, Name = "Name " };
+        {//  var Flower = new Flower {  Name = "Name" };
+          //  App.dboContext.Flower.Add(Flower);  App.dboContext.SaveChanges();
 
-            App.dboContext.Flower.Add(Flower);
-            App.dboContext.SaveChanges();
             Flowers = App.dboContext.Flower.ToList();
-
+            Signal(nameof(Flowers));
         }
 
         private void GetFlowerList()
@@ -98,20 +111,14 @@ namespace Shed_Shell__ListFlowers
             await Shell.Current.GoToAsync($"Edit?ID={null}");
             //    GetFlowerList();
             GetDBFlowerList();
-
         }
 
         private async void DeleteFlower(object sender, EventArgs e)
         {
-            if(SelectedFlower == null)
-            {
-                await DisplayAlert("Ошибка", "Выберите товар", "Понял. Исправлюсь. Сохранюсь.");
-                return;
-            }
+            BD.ChekNull(SelectedFlower);
             BD Bd = new BD();
             Bd.DeleteFlower(SelectedFlower);
-            // GetFlowerList();
-            GetDBFlowerList();
+             GetFlowerList();
 
         }
 

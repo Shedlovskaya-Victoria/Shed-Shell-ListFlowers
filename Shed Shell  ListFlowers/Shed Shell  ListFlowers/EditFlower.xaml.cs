@@ -15,7 +15,7 @@ using Xamarin.Forms.Xaml;
 namespace Shed_Shell__ListFlowers
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    [QueryProperty(nameof(ID), "ID")]
+  //  [QueryProperty(nameof(ID), "ID")]
     public partial class EditFlower : ContentPage, INotifyPropertyChanged
     {
         private int iD;
@@ -27,15 +27,17 @@ namespace Shed_Shell__ListFlowers
             set
             {
                 iD = value;
+             /*
                 if (iD == 0)
                 {
                     NewFlower = new Flower();
                 }
                 else
                 {
-                    NewFlower = BD.GetFlowerByID(iD);
+                   // NewFlower = BD.GetFlowerByID(iD);
                     Edit = true;
                 }
+             */
                 
             }
         }
@@ -56,11 +58,21 @@ namespace Shed_Shell__ListFlowers
         private Flower newFlower;
 
         public ObservableCollection<CategoryFlower> Categories { get; private set; }
+        bool Edit = false;
 
         public EditFlower()
         {
             InitializeComponent();
             BindingContext = this;
+            if(BD.Get() == null)
+            {
+                NewFlower = new Flower();
+            }
+            else
+            {
+                NewFlower = (Flower)BD.Get();
+                Edit = true;
+            }
         }
         private void GetCategoriesList()
         {
@@ -71,20 +83,20 @@ namespace Shed_Shell__ListFlowers
         {
             Shell.Current.GoToAsync("//Flw");
         }
-        bool Edit = false;
 
         private void Save(object sender, EventArgs e)
         {
-
-            BD Bd = new BD();
+            BD.ChekNull(NewFlower);
+           // BD Bd = new BD();
             if (!Edit)
             {
-                Bd.AddFlower(NewFlower);
+                // Bd.AddFlower(NewFlower);
+                App.dboContext.Flower.Add(NewFlower);
+                App.dboContext.SaveChanges();
             }
             if (Edit)
             {
-
-                Bd.EditFlower(NewFlower);
+               // Bd.EditFlower(NewFlower);
                 Edit = false;
             }
             Shell.Current.GoToAsync("//Flw");
