@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Student\\source\\repos\\Shed-Shell-ListFlowers\\Shed Shell  ListFlowers\\Shed Shell  ListFlowers.Android\\Shed Shell  ListFlowers.Android.csproj": {}
+    "C:\\Users\\Student\\Source\\Repos\\Shed-Shell-ListFlowers\\Shed Shell  ListFlowers\\Shed Shell  ListFlowers.Android\\Shed Shell  ListFlowers.Android.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Student\\source\\repos\\Shed-Shell-ListFlowers\\Shed Shell  ListFlowers\\Shed Shell  ListFlowers.Android\\Shed Shell  ListFlowers.Android.csproj": {
+    "C:\\Users\\Student\\Source\\Repos\\Shed-Shell-ListFlowers\\Shed Shell  ListFlowers\\Shed Shell  ListFlowers.Android\\Shed Shell  ListFlowers.Android.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Student\\source\\repos\\Shed-Shell-ListFlowers\\Shed Shell  ListFlowers\\Shed Shell  ListFlowers.Android\\Shed Shell  ListFlowers.Android.csproj",
+        "projectUniqueName": "C:\\Users\\Student\\Source\\Repos\\Shed-Shell-ListFlowers\\Shed Shell  ListFlowers\\Shed Shell  ListFlowers.Android\\Shed Shell  ListFlowers.Android.csproj",
         "projectName": "Shed Shell  ListFlowers.Android",
-        "projectPath": "C:\\Users\\Student\\source\\repos\\Shed-Shell-ListFlowers\\Shed Shell  ListFlowers\\Shed Shell  ListFlowers.Android\\Shed Shell  ListFlowers.Android.csproj",
+        "projectPath": "C:\\Users\\Student\\Source\\Repos\\Shed-Shell-ListFlowers\\Shed Shell  ListFlowers\\Shed Shell  ListFlowers.Android\\Shed Shell  ListFlowers.Android.csproj",
         "packagesPath": "C:\\Users\\Student\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Student\\source\\repos\\Shed-Shell-ListFlowers\\Shed Shell  ListFlowers\\Shed Shell  ListFlowers.Android\\obj\\",
+        "outputPath": "C:\\Users\\Student\\Source\\Repos\\Shed-Shell-ListFlowers\\Shed Shell  ListFlowers\\Shed Shell  ListFlowers.Android\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
@@ -32,8 +32,8 @@
         "frameworks": {
           "monoandroid13.0": {
             "projectReferences": {
-              "C:\\Users\\Student\\source\\repos\\Shed-Shell-ListFlowers\\Shed Shell  ListFlowers\\Shed Shell  ListFlowers\\Shed Shell  ListFlowers.csproj": {
-                "projectPath": "C:\\Users\\Student\\source\\repos\\Shed-Shell-ListFlowers\\Shed Shell  ListFlowers\\Shed Shell  ListFlowers\\Shed Shell  ListFlowers.csproj"
+              "C:\\Users\\Student\\Source\\Repos\\Shed-Shell-ListFlowers\\Shed Shell  ListFlowers\\Shed Shell  ListFlowers\\Shed Shell  ListFlowers.csproj": {
+                "projectPath": "C:\\Users\\Student\\Source\\Repos\\Shed-Shell-ListFlowers\\Shed Shell  ListFlowers\\Shed Shell  ListFlowers\\Shed Shell  ListFlowers.csproj"
               }
             }
           }
@@ -58,14 +58,14 @@
         }
       }
     },
-    "C:\\Users\\Student\\source\\repos\\Shed-Shell-ListFlowers\\Shed Shell  ListFlowers\\Shed Shell  ListFlowers\\Shed Shell  ListFlowers.csproj": {
+    "C:\\Users\\Student\\Source\\Repos\\Shed-Shell-ListFlowers\\Shed Shell  ListFlowers\\Shed Shell  ListFlowers\\Shed Shell  ListFlowers.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Student\\source\\repos\\Shed-Shell-ListFlowers\\Shed Shell  ListFlowers\\Shed Shell  ListFlowers\\Shed Shell  ListFlowers.csproj",
+        "projectUniqueName": "C:\\Users\\Student\\Source\\Repos\\Shed-Shell-ListFlowers\\Shed Shell  ListFlowers\\Shed Shell  ListFlowers\\Shed Shell  ListFlowers.csproj",
         "projectName": "Shed Shell  ListFlowers",
-        "projectPath": "C:\\Users\\Student\\source\\repos\\Shed-Shell-ListFlowers\\Shed Shell  ListFlowers\\Shed Shell  ListFlowers\\Shed Shell  ListFlowers.csproj",
+        "projectPath": "C:\\Users\\Student\\Source\\Repos\\Shed-Shell-ListFlowers\\Shed Shell  ListFlowers\\Shed Shell  ListFlowers\\Shed Shell  ListFlowers.csproj",
         "packagesPath": "C:\\Users\\Student\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Student\\source\\repos\\Shed-Shell-ListFlowers\\Shed Shell  ListFlowers\\Shed Shell  ListFlowers\\obj\\",
+        "outputPath": "C:\\Users\\Student\\Source\\Repos\\Shed-Shell-ListFlowers\\Shed Shell  ListFlowers\\Shed Shell  ListFlowers\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

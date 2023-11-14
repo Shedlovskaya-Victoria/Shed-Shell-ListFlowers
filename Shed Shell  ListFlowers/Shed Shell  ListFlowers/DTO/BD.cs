@@ -104,7 +104,7 @@ namespace Shed_Shell__ListFlowers
            return Obj;
         }
 
-        public static async void ChekNull(object obj)
+        public static void ChekNull(object obj)
         {
             if (obj == null)
             {

@@ -51,7 +51,7 @@ namespace Shed_Shell__ListFlowers
             }
         }
 
-        public CustomCommand<Flower> Remove { get; private set; }
+        public CustomCommand<Flower> Remove { get; set; }
 
         void Signal([CallerMemberName] string prop = null)
         {
@@ -71,12 +71,11 @@ namespace Shed_Shell__ListFlowers
             CategoryFlower categoryFlower = new CategoryFlower(); categoryFlower.Title = "ExCtg";
            */
            // Flower newF = new Flower(); newF.Name = "FirstExFlwr"; newF.Cost = 32; newF.Category = categoryFlower;
-            GetDBFlowerList();
+         //   GetDBFlowerList();
            // GetFlowerList();
            //  Bd.AddFlower(newF);
            //   GetFlowerList();
            // GetCategoriesList();
-            Routing.RegisterRoute("Edit", typeof(EditFlower));
 
             Remove = new CustomCommand<Flower>( (item) =>
             {
@@ -108,7 +107,7 @@ namespace Shed_Shell__ListFlowers
 
         private async void AddFlower(object sender, EventArgs e)
         {
-            await Shell.Current.GoToAsync($"Edit?ID={null}");
+            await Shell.Current.GoToAsync($"Edit");
             //    GetFlowerList();
             GetDBFlowerList();
         }
@@ -116,9 +115,10 @@ namespace Shed_Shell__ListFlowers
         private async void DeleteFlower(object sender, EventArgs e)
         {
             BD.ChekNull(SelectedFlower);
-            BD Bd = new BD();
-            Bd.DeleteFlower(SelectedFlower);
-             GetFlowerList();
+            // BD Bd = new BD();
+            //  Bd.DeleteFlower(SelectedFlower);
+            App.dboContext.Flower.Remove(SelectedFlower);
+            GetDBFlowerList();
 
         }
 
@@ -129,7 +129,8 @@ namespace Shed_Shell__ListFlowers
                 await DisplayAlert("Ошибка", "Выберите товар", "Понял. Исправлюсь. Сохранюсь.");
                 return;
             }
-            await Shell.Current.GoToAsync($"Edit?ID={SelectedFlower.Id}");
+            BD.Set(SelectedFlower);
+            await Shell.Current.GoToAsync($"Edit");
             //  GetFlowerList();
             GetDBFlowerList();
 

@@ -17,7 +17,9 @@ namespace Shed_Shell__ListFlowers
         public ShellPage ()
 		{
 			InitializeComponent();
-			BindingContext = this;
+
+            Routing.RegisterRoute("Edit", typeof(EditFlower));
+            BindingContext = this;
 			
 		}
 	}

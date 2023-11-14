@@ -2,15 +2,17 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Shed_Shell__ListFlowers.FlowersList"
+             xmlns:local="clr-namespace:Shed_Shell__ListFlowers"
              Title="Список цветов">
     <ContentPage.Content>
     
     <StackLayout>
           
             <!---вывод списка-->
-            <Button Text="Add New" Clicked="AddFlower"/>
+            <Button Text="Add New" Clicked="AddFlower" />
             <CollectionView ItemsSource="{Binding Flowers}" SelectionMode="Single"
-                            SelectedItem="{Binding SelectedFlower}">
+                            SelectedItem="{Binding SelectedFlower}"
+                            x:Name="collectionView1">
 
                 <CollectionView.Header>
                     <Grid>
@@ -24,16 +26,16 @@
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <SwipeView>
-                            
                             <SwipeView.BottomItems>
                                 <SwipeItems>
                                     <SwipeItem Text="уdалить"
                                                BackgroundColor="RosyBrown"
+                                               BindingContext="{Binding Source={x:Reference collectionView1}, Path=BindingContext}"
                                                Command="{Binding Remove}"
-                                               CommandParameter="{Binding .}"/>
+                                               CommandParameter="{Binding Source={x:Reference Item}, Path=BindingContext}"/>
                                 </SwipeItems>
                             </SwipeView.BottomItems>
-                        <StackLayout>
+                        <StackLayout x:Name="Item">
                             <Label Text="{Binding Name}" />
                         </StackLayout>
                         </SwipeView>
