@@ -34,10 +34,30 @@
                                                Command="{Binding Remove}"
                                                CommandParameter="{Binding Source={x:Reference Item}, Path=BindingContext}"/>
                                 </SwipeItems>
+                                
                             </SwipeView.BottomItems>
-                        <StackLayout x:Name="Item">
-                            <Label Text="{Binding Name}" />
-                        </StackLayout>
+                            <SwipeView.TopItems>
+                                <SwipeItems>
+                                    <SwipeItem Text="редактировать"
+                                                BackgroundColor="GreenYellow"
+                                                BindingContext="{Binding Source={x:Reference collectionView1}, Path=BindingContext}"
+                                                Command="{Binding Edit}"
+                                                CommandParameter="{Binding Source={x:Reference Item}, Path=BindingContext}"/>
+                                </SwipeItems>
+                            </SwipeView.TopItems>
+                            <StackLayout x:Name="Item">
+                                <Line X1="0"
+                                      Y1="20"
+                                      X2="300"
+                                      Y2="20" 
+                                      Stroke="Black" 
+                                      StrokeThickness="5" 
+                                      StrokeLineCap="Round"/>
+                                <Label Text="{Binding Name}" />
+                                <Label Text="{Binding Cost}" />
+                                <Label   x:Name="CategTitle"/>
+                                <Line Stroke="Black" StrokeThickness="5" StrokeLineCap="Round"/>
+                            </StackLayout>
                         </SwipeView>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>

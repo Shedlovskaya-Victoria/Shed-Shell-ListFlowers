@@ -9,7 +9,9 @@ namespace Shed_Shell__ListFlowers.DTO
         public int Id { get; set; }
         public string Name { get; set; }
         public decimal Cost { get; set; }
-       // public CategoryFlower Category { get; set; }
+        public int CategoryFlowerId { get; set; }
+       
+       //public CategoryFlower Category { get=> }
     }
 
     public class CategoryFlower

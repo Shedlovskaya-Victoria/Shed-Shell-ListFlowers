@@ -81,7 +81,7 @@ namespace Shed_Shell__ListFlowers
         }
         private void CloseEditForm(object sender, EventArgs e)
         {
-            Shell.Current.GoToAsync("//Flw");
+            Shell.Current.GoToAsync("..");
         }
 
         private void Save(object sender, EventArgs e)
@@ -96,10 +96,15 @@ namespace Shed_Shell__ListFlowers
             }
             if (Edit)
             {
-               // Bd.EditFlower(NewFlower);
+                // Bd.EditFlower(NewFlower);
+                 App.dboContext.Flower.FirstOrDefault(s => s.Id == NewFlower.Id).Name = NewFlower.Name;;
+                App.dboContext.Flower.FirstOrDefault(s => s.Id == NewFlower.Id).Cost = NewFlower.Cost;
+                App.dboContext.Flower.FirstOrDefault(s => s.Id == NewFlower.Id).CategoryFlowerId = NewFlower.CategoryFlowerId;
+
+                App.dboContext.SaveChanges();
                 Edit = false;
             }
-            Shell.Current.GoToAsync("//Flw");
+            Shell.Current.GoToAsync("..");
         }
     }
 }

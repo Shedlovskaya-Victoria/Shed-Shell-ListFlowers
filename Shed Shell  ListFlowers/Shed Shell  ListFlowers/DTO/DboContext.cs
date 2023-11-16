@@ -10,6 +10,7 @@ namespace Shed_Shell__ListFlowers.DTO
     {
         public string filepath;
         public DbSet<Flower> Flower { get; set; }
+        public DbSet<CategoryFlower> Categories { get;  set; }
 
         public DboContext(string filepath)
         {
