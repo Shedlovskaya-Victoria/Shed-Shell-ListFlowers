@@ -25,4 +25,24 @@ namespace Shed_Shell__ListFlowers.Tools
             action((T)parameter);
         }
     }
+    public class CustomCommand : ICommand
+    {
+        public CustomCommand(Action action)
+        {
+            this.action = action;
+        }
+
+        Action action { get; set; }
+        public event EventHandler CanExecuteChanged;
+
+        public bool CanExecute(object parameter)
+        {
+            return true;
+        }
+
+        public void Execute(object parameter)
+        {
+            action();
+        }
+    }
 }

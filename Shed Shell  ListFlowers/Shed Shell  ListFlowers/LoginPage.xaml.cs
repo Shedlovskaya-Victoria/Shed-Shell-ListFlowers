@@ -33,7 +33,7 @@ namespace Shed_Shell__ListFlowers
             }
             if(Password == "1" && Login == "1" )
             {
-                await DisplayAlert("Успех!", "Вы авторизованы!", "Ok");
+              //  await DisplayAlert("Успех!", "Вы авторизованы!", "Ok");
                 return true;
             }
             else

@@ -19,6 +19,7 @@ namespace Shed_Shell__ListFlowers
 			InitializeComponent();
 
             Routing.RegisterRoute("Edit", typeof(EditFlower));
+            Routing.RegisterRoute("EditCtg", typeof(EditCategory));
             BindingContext = this;
 			
 		}

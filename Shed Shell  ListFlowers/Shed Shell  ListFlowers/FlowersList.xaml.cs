@@ -25,6 +25,7 @@ namespace Shed_Shell__ListFlowers
 
         public CustomCommand<Flower> Remove { get; set; }
         public CustomCommand<Flower> Edit { get; set; }
+        public CustomCommand Add { get; set; }
 
         public event PropertyChangedEventHandler PropertyChanged;
         public List<Flower> Flowers { 
@@ -78,7 +79,7 @@ namespace Shed_Shell__ListFlowers
             */
             Remove = new CustomCommand<Flower>( (item) =>
             {
-                BD.ChekNull(SelectedFlower);
+                BD.ChekNull(item);
                 App.dboContext.Flower.Remove(item);
                 App.dboContext.SaveChanges();
                 GetDBFlowerList();
@@ -90,19 +91,22 @@ namespace Shed_Shell__ListFlowers
                 await Shell.Current.GoToAsync($"Edit");
                 GetDBFlowerList();
             });
+            Add = new CustomCommand(async () =>
+            {
+                await Shell.Current.GoToAsync($"Edit");
+            });
         }
 
         protected override void OnAppearing()
         {
-
-            GetDBCategoryList();
+           //GetDBCategoryList();
             GetDBFlowerList();
             base.OnAppearing();
         }
 
         private void GetDBFlowerList()
-        {  var Flower = new Flower {  Name = "ExFlowName", CategoryFlowerId = 1 };
-           App.dboContext.Flower.Add(Flower);  App.dboContext.SaveChanges();
+        {//  var Flower = new Flower {  Name = "ExFlowName", CategoryFlowerId = 1 };
+          // App.dboContext.Flower.Add(Flower);  App.dboContext.SaveChanges();
 
             //CategTitle.Text = App.dboContext.Categories.Select(c => c.Id == 1).ToString();
             //Signal(nameof(CategTitle));
@@ -113,12 +117,12 @@ namespace Shed_Shell__ListFlowers
         }
         private void GetDBCategoryList()
         {
-            Categories = App.dboContext.Categories.ToList();
-            Signal(nameof(Categories));
+          //  Categories = App.dboContext.Categories.ToList();
+         //   Signal(nameof(Categories));
 
-            var categ = new CategoryFlower { Title = "ExCategTitle" };
-            App.dboContext.Categories.Add(categ);  
-            App.dboContext.SaveChanges();
+          //  var categ = new CategoryFlower { Title = "ExCategTitle" };
+          //  App.dboContext.Categories.Add(categ);  
+          //  App.dboContext.SaveChanges();
 
             Categories = new List<CategoryFlower>();
             Signal(nameof(Categories));

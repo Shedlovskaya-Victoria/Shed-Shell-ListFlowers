@@ -8,7 +8,7 @@ namespace Shed_Shell__ListFlowers
 {
     public partial class App : Application
     {
-        private const string FILE_NAME = "FlowerList2.db";
+        private const string FILE_NAME = "FlowerList6.db";
         private static DboContext dboContext1;
 
         public static DboContext dboContext { //аксесер

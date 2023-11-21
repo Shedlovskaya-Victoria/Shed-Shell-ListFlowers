@@ -9,11 +9,13 @@
     <StackLayout>
           
             <!---вывод списка-->
-            <Button Text="Add New" Clicked="AddFlower" />
+            <Button Text="Add" Clicked="AddFlower"/>
+            <!-- <Button Text="добавить" Command="{Binding Add}" />-->
             <CollectionView ItemsSource="{Binding Flowers}" SelectionMode="Single"
                             SelectedItem="{Binding SelectedFlower}"
                             x:Name="collectionView1">
 
+                <!--заголовок списка
                 <CollectionView.Header>
                     <Grid>
                         <StackLayout  Orientation="Horizontal" Padding="6" HorizontalOptions="Center">
@@ -23,6 +25,7 @@
                         </StackLayout>
                     </Grid>
                 </CollectionView.Header>
+                -->
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <SwipeView>
@@ -53,10 +56,25 @@
                                       Stroke="Black" 
                                       StrokeThickness="5" 
                                       StrokeLineCap="Round"/>
-                                <Label Text="{Binding Name}" />
-                                <Label Text="{Binding Cost}" />
-                                <Label   x:Name="CategTitle"/>
-                                <Line Stroke="Black" StrokeThickness="5" StrokeLineCap="Round"/>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="#  "/>
+                                    <Label Text="{Binding Id}" />
+                                    <Label Text="{Binding Name}" />
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Цена:  "/>
+                                    <Label Text="{Binding Cost}" />
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="#категория:  "/>
+                                    <Label Text="{Binding CategoryFlowerId}"/>
+                                </StackLayout>
+                                <!--  <Label Text="{Binding Category.Title}" />-->
+                                <Line X1="0"
+                                      Y1="20"
+                                      X2="300"
+                                      Y2="20"
+                                      Stroke="Black" StrokeThickness="5" StrokeLineCap="Round"/>
                             </StackLayout>
                         </SwipeView>
                     </DataTemplate>

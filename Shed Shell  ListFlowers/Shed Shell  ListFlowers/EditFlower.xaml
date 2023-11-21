@@ -14,7 +14,7 @@
             <Label Text="Выберите категорию цветка: "/>
             <Picker ItemsSource="{Binding Categories}"  
                     ItemDisplayBinding="{Binding Title}"
-                    SelectedItem="{Binding NewFlower.Category}"/>
+                    SelectedItem="{Binding SelectedCateg}"/>
             <StackLayout Orientation="Horizontal" Padding="2">
                 <Button Text="OK" Clicked="Save"/>
                 <Button Text="Close" Clicked="CloseEditForm" />

@@ -49,15 +49,20 @@ namespace Shed_Shell__ListFlowers
         private void SaveC(object sender, EventArgs e)
         {
             BD.ChekNull(EditFlower);
-            BD Bd = new BD();
+          //  BD Bd = new BD();
             if (!Edit)
             {
                 //  NewFlower.Category = SelectedFlower.Category;
-                Bd.AddCategory(EditFlower);
+              //  Bd.AddCategory(EditFlower);
+              App.dboContext.Categories.Add(EditFlower);
+                App.dboContext.SaveChanges();
             }
             if (Edit)
             {
-                Bd.EditCategory(EditFlower);
+                //   Bd.EditCategory(EditFlower);
+                App.dboContext.Categories.FirstOrDefault(c => c.Id == EditFlower.Id).Title = EditFlower.Title;
+                App.dboContext.SaveChanges();
+
                 Edit = false;
             }
             GoBack();

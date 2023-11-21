@@ -31,7 +31,7 @@ namespace Shed_Shell__ListFlowers
                 Signal();
             }
         }
-        public ObservableCollection<CategoryFlower> Categories
+        public List<CategoryFlower> Categories
         {
             get => categories;
             set
@@ -40,24 +40,32 @@ namespace Shed_Shell__ListFlowers
                 Signal();
             }
         }
-        private ObservableCollection<CategoryFlower> categories;
+        private List<CategoryFlower> categories;
         bool Edit = false;
 
         public CategoriesList ()
 		{
 			InitializeComponent ();
             BindingContext = this;
-            GetCategoriesList();
+            /*
             BD bD = new BD();
             CategoryFlower categoryFlower = new CategoryFlower(); categoryFlower.Title = "Example Category";
             bD.AddCategory(categoryFlower);
             GetCategoriesList();
-            Routing.RegisterRoute("EditCtg", typeof(EditCategory));
+            */
+        }
+        protected override void OnAppearing()
+        {
+            GetCategoriesList();
+            base.OnAppearing();
         }
 
         private void GetCategoriesList()
         {
-            Categories = BD.GetCategories();
+            Categories = new List<CategoryFlower>();
+            Signal(nameof(Categories));
+            Categories = App.dboContext.Categories.ToList();
+            //Categories = BD.GetCategories();
             Signal(nameof(Categories));
         }
         async void CheskSeleced()

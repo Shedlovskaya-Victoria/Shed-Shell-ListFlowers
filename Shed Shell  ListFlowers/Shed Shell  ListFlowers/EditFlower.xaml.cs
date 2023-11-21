@@ -55,9 +55,10 @@ namespace Shed_Shell__ListFlowers
                 Signal();
             }
         }
+        public CategoryFlower SelectedCateg { get; set; } = new CategoryFlower();
         private Flower newFlower;
 
-        public ObservableCollection<CategoryFlower> Categories { get; private set; }
+        public List<CategoryFlower> Categories { get; private set; }
         bool Edit = false;
 
         public EditFlower()
@@ -71,12 +72,15 @@ namespace Shed_Shell__ListFlowers
             else
             {
                 NewFlower = (Flower)BD.Get();
+                SelectedCateg = App.dboContext.Categories.FirstOrDefault(c => c.Id == NewFlower.CategoryFlowerId);
                 Edit = true;
             }
+            GetCategoriesList();
         }
         private void GetCategoriesList()
         {
-            Categories = BD.GetCategories();
+            Categories = App.dboContext.Categories.ToList();
+          //  Categories = BD.GetCategories().ToList();
             Signal(nameof(Categories));
         }
         private void CloseEditForm(object sender, EventArgs e)
@@ -84,22 +88,30 @@ namespace Shed_Shell__ListFlowers
             Shell.Current.GoToAsync("..");
         }
 
-        private void Save(object sender, EventArgs e)
+        private async void Save(object sender, EventArgs e)
         {
             BD.ChekNull(NewFlower);
-           // BD Bd = new BD();
+            if (SelectedCateg == null)
+            {
+                await App.Current.MainPage.DisplayAlert("Ошибка", "Выберите Категрию!", "Оk");
+                return;
+            }
+            // BD Bd = new BD();
             if (!Edit)
             {
                 // Bd.AddFlower(NewFlower);
+                NewFlower.CategoryFlowerId = SelectedCateg.Id;
+
                 App.dboContext.Flower.Add(NewFlower);
                 App.dboContext.SaveChanges();
             }
             if (Edit)
             {
                 // Bd.EditFlower(NewFlower);
-                 App.dboContext.Flower.FirstOrDefault(s => s.Id == NewFlower.Id).Name = NewFlower.Name;;
+
+                App.dboContext.Flower.FirstOrDefault(s => s.Id == NewFlower.Id).Name = NewFlower.Name;;
                 App.dboContext.Flower.FirstOrDefault(s => s.Id == NewFlower.Id).Cost = NewFlower.Cost;
-                App.dboContext.Flower.FirstOrDefault(s => s.Id == NewFlower.Id).CategoryFlowerId = NewFlower.CategoryFlowerId;
+                App.dboContext.Flower.FirstOrDefault(s => s.Id == NewFlower.Id).CategoryFlowerId = SelectedCateg.Id;
 
                 App.dboContext.SaveChanges();
                 Edit = false;
