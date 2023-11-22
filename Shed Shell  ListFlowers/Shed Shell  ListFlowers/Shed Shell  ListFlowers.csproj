@@ -18,10 +18,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="FlowersList.xaml.cs">
+    <Compile Update="MVVM\View\show\FlowersList.xaml.cs">
       <DependentUpon>FlowersList.xaml</DependentUpon>
     </Compile>
-    <Compile Update="LoginPage.xaml.cs">
+    <Compile Update="MVVM\View\show\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
     <Compile Update="ShellPage.xaml.cs">
@@ -30,16 +30,16 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="CategoriesList.xaml">
+    <EmbeddedResource Update="MVVM\View\show\CategoriesList.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="EditCategory.xaml">
+    <EmbeddedResource Update="MVVM\View\edit\EditCategory.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="EditFlower.xaml">
+    <EmbeddedResource Update="MVVM\View\edit\EditFlower.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="FlowersList.xaml">
+    <EmbeddedResource Update="MVVM\View\show\FlowersList.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="ShellPage.xaml">

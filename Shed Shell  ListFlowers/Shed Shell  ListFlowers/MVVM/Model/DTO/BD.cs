@@ -108,11 +108,11 @@ namespace Shed_Shell__ListFlowers
         {
             if (obj == null)
             {
-                ErorMessage();
+                ErrorMessage();
                 return;
             }
         }
-        private async static void ErorMessage()
+        private async static void ErrorMessage()
         {
             await App.Current.MainPage.DisplayAlert("Ошибка", "Выберите товар", "Понял. Исправлюсь. Сохранюсь.");
         }

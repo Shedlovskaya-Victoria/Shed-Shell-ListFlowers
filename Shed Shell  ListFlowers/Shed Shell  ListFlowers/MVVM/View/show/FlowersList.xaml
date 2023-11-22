@@ -33,9 +33,11 @@
                                 <SwipeItems>
                                     <SwipeItem Text="уdалить"
                                                BackgroundColor="RosyBrown"
-                                               BindingContext="{Binding Source={x:Reference collectionView1}, Path=BindingContext}"
+                                               BindingContext="{Binding 
+                                        Source={x:Reference collectionView1}, Path=BindingContext}"
                                                Command="{Binding Remove}"
-                                               CommandParameter="{Binding Source={x:Reference Item}, Path=BindingContext}"/>
+                                               CommandParameter="{Binding Source={x:Reference Item}
+                                        , Path=BindingContext}"/>
                                 </SwipeItems>
                                 
                             </SwipeView.BottomItems>
@@ -43,9 +45,11 @@
                                 <SwipeItems>
                                     <SwipeItem Text="редактировать"
                                                 BackgroundColor="GreenYellow"
-                                                BindingContext="{Binding Source={x:Reference collectionView1}, Path=BindingContext}"
+                                                BindingContext="{Binding Source={x:Reference collectionView1},
+                                        Path=BindingContext}"
                                                 Command="{Binding Edit}"
-                                                CommandParameter="{Binding Source={x:Reference Item}, Path=BindingContext}"/>
+                                                CommandParameter="{Binding Source={x:Reference Item},
+                                        Path=BindingContext}"/>
                                 </SwipeItems>
                             </SwipeView.TopItems>
                             <StackLayout x:Name="Item">
@@ -68,6 +72,7 @@
                                 <StackLayout Orientation="Horizontal">
                                     <Label Text="#категория:  "/>
                                     <Label Text="{Binding CategoryFlowerId}"/>
+                                    <Label Text="{Binding Category.Title}" />
                                 </StackLayout>
                                 <!--  <Label Text="{Binding Category.Title}" />-->
                                 <Line X1="0"

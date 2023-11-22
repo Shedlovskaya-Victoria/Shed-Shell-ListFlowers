@@ -14,15 +14,14 @@ namespace Shed_Shell__ListFlowers.DTO
        
        public CategoryFlower Category { get {
 
-                if(Category == null)
+                if(CategoryFlowerId != 0)
                 {
                     return App.dboContext.Categories.FirstOrDefault(c => c.Id == CategoryFlowerId);
                 }
-                else if (CategoryFlowerId == 0 | CategoryFlowerId == null)
+                else
                 {
                     return new CategoryFlower() { Title = "Нет категории" };
                 }
-                return Category;
             }
         }
     }
