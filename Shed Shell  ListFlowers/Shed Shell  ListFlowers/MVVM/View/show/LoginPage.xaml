@@ -1,8 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Shed_Shell__ListFlowers.LoginPage">
+             xmlns:vmShow="clr-namespace:Shed_Shell__ListFlowers.MVVM.ModelView.show"
+             x:Class="Shed_Shell__ListFlowers.LoginPage"
+             BindingContext="{DynamicResource vm}">
     <ContentPage.Resources>
+        <vmShow:LoginVM x:Key="vm"/>
         <Style TargetType="Label">
             <Setter Property="FontSize" Value="22"/>
             <Setter Property="Margin" Value="5"/>
@@ -15,7 +18,7 @@
             <Entry Text="{Binding Login}"/>
             <Label Text="пароль: "/>
             <Entry IsPassword="True" Text="{Binding Password}"/>
-            <Button Text="Авторизация" Clicked="Authorization"/>
+            <Button Text="Авторизация" Command="{Binding AuthorizationComm}"/>
         </StackLayout>
     </ContentPage.Content>
 

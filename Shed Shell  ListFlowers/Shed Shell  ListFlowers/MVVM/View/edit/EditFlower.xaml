@@ -1,7 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Shed_Shell__ListFlowers.EditFlower">
+             xmlns:vmEdit="clr-namespace:Shed_Shell__ListFlowers.MVVM.ModelView.edit"
+             x:Class="Shed_Shell__ListFlowers.EditFlower"
+             BindingContext="{DynamicResource vmEdit}">
+    <ContentPage.Resources>
+        <vmEdit:EditFlowerVM x:Key="vmEdit"/>
+    </ContentPage.Resources>
     <ContentPage.Content>
         <!---окошко редактирования-->
         <StackLayout 
@@ -16,8 +21,8 @@
                     ItemDisplayBinding="{Binding Title}"
                     SelectedItem="{Binding SelectedCateg}"/>
             <StackLayout Orientation="Horizontal" Padding="2">
-                <Button Text="OK" Clicked="Save"/>
-                <Button Text="Close" Clicked="CloseEditForm" />
+                <Button Text="OK" Command="{Binding Save}"/>
+                <Button Text="Close" Command="{Binding CloseEditForm}" />
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

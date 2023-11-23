@@ -3,14 +3,17 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Shed_Shell__ListFlowers.FlowersList"
              xmlns:local="clr-namespace:Shed_Shell__ListFlowers"
-             Title="Список цветов">
+             xmlns:vmShow="clr-namespace:Shed_Shell__ListFlowers.MVVM.ModelView.show"
+             Title="Список цветов"
+             BindingContext="{DynamicResource vmShow}">
+    <ContentPage.Resources>
+        <vmShow:FlowerListVM x:Key="vmShow"/>
+    </ContentPage.Resources>
     <ContentPage.Content>
-    
-    <StackLayout>
-          
-            <!---вывод списка-->
-            <Button Text="Add" Clicked="AddFlower"/>
-            <!-- <Button Text="добавить" Command="{Binding Add}" />-->
+
+        <StackLayout>
+            <!-- <Button Text="Add" Command="AddFlower"/>-->
+            <Button Text="добавить" Command="{Binding Add}" />
             <CollectionView ItemsSource="{Binding Flowers}" SelectionMode="Single"
                             SelectedItem="{Binding SelectedFlower}"
                             x:Name="collectionView1">

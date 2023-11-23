@@ -20,7 +20,6 @@ namespace Shed_Shell__ListFlowers
 
             Routing.RegisterRoute("Edit", typeof(EditFlower));
             Routing.RegisterRoute("EditCtg", typeof(EditCategory));
-            BindingContext = this;
 			
 		}
 	}

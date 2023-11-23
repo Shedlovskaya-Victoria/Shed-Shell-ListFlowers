@@ -1,15 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Shed_Shell__ListFlowers.EditCategory">
+             xmlns:vmEdit="clr-namespace:Shed_Shell__ListFlowers.MVVM.ModelView.edit"
+             x:Class="Shed_Shell__ListFlowers.EditCategory"
+             BindingContext="{DynamicResource vmEdit}">
+    <ContentPage.Resources>
+        <vmEdit:EditCategoryVM x:Key="vmEdit"/>
+    </ContentPage.Resources>
     <ContentPage.Content>
         <StackLayout BackgroundColor="LightBlue">
             <Label Text="Напишите название категории: "/>
             <Entry Text="{Binding EditFlower.Title}"/>
 
             <StackLayout Orientation="Horizontal" Padding="2" VerticalOptions="CenterAndExpand">
-                <Button Text="OK" Clicked="SaveC"/>
-                <Button Text="Close" Clicked="CloseEditFormC" />
+                <Button Text="OK" Command="{Binding Save}"/>
+                <Button Text="Close" Command="{Binding CloseEditForm}" />
             </StackLayout>
         </StackLayout>
     

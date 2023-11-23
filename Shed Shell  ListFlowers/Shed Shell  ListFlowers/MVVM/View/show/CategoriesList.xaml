@@ -1,15 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vmShow="clr-namespace:Shed_Shell__ListFlowers.MVVM.ModelView.show"
              x:Class="Shed_Shell__ListFlowers.CategoriesList"
-             Title="Список категорий">
+             Title="Список категорий"
+             BindingContext="{DynamicResource vmShow}">
+    <ContentPage.Resources>
+        <vmShow:CategoryListVM x:Key="vmShow"/>
+    </ContentPage.Resources>
     <ContentPage.Content>
        
         <StackLayout>
             <StackLayout Orientation="Horizontal">
-                <Button Text="доб" Clicked="AddC" x:Name="AddButtonCategory"/>
-                <Button Text="ред" Clicked="EditC"/>
-                <Button Text="уд" Clicked="DeleteC"/>
+                <Button Text="доб" Command="{Binding Add}" x:Name="AddButtonCategory"/>
+                <Button Text="ред" Command="{Binding EditComm}"/>
+                <Button Text="уд" Command="{Binding Delete}"/>
             </StackLayout>
             <CollectionView ItemsSource="{Binding Categories}" SelectionMode="Single"
                  SelectedItem="{Binding SelectedCategory}">

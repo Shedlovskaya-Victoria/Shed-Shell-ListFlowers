@@ -1,4 +1,5 @@
 ﻿
+using Shed_Shell__ListFlowers.MVVM.ModelView.show;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,47 +13,15 @@ namespace Shed_Shell__ListFlowers
 {
     public partial class LoginPage : ContentPage
     {
-        public string Password { get; set; }
-        public string Login { get; set; }
         public LoginPage()
         {
             InitializeComponent();
-            BindingContext = this;
+            //BindingContext = this;
         }
-        async Task<bool> CheckAuthorization()
+        protected override void OnAppearing()
         {
-            if(string.IsNullOrEmpty(Password))
-            {
-                await DisplayAlert("Ошибка!", "Напишите пароль!", "Ok");
-                return false;
-            }
-            if(string.IsNullOrEmpty(Login))
-            {
-                await DisplayAlert("Ошибка!", "Напишите логин!", "Ok");
-                return false;
-            }
-            if(Password == "1" && Login == "1" )
-            {
-              //  await DisplayAlert("Успех!", "Вы авторизованы!", "Ok");
-                return true;
-            }
-            else
-            {
-                await DisplayAlert("Ошибка!", "Логин или пароль неверный!", "Ok");
-                return false;
-            }
+            ((LoginVM)BindingContext).OnAppearing();
         }
-        async void CheckMethod()
-        {
-            if (await CheckAuthorization())
-            {
-                await Shell.Current.GoToAsync("//Flw");
-            }
-        }
-
-        private void Authorization(object sender, EventArgs e)
-        {
-            CheckMethod();
-        }
+      
     }
 }
