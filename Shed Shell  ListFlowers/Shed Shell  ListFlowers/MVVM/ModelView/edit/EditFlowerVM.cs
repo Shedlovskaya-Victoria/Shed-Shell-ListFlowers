@@ -6,33 +6,33 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
 namespace Shed_Shell__ListFlowers.MVVM.ModelView.edit
 {
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    [QueryProperty(nameof(ID), "ToID")]
     public class EditFlowerVM : INotifyPropertyChanged
     {
         private int iD;
         public int ID
         {
-            get
-            {
-                return iD;
-            }
+            get => iD;
             set
             {
+                GetCategoriesList();
+                if (value == 0)
+                {
+                    NewFlower = new Flower();
+                }
+                else
+                {
+                    NewFlower = App.dboContext.Flower.FirstOrDefault(s=>s.Id == value);
+                    SelectedCateg = App.dboContext.Categories.FirstOrDefault(c => c.Id == NewFlower.CategoryFlowerId);
+                    Signal(nameof(SelectedCateg));
+                    Edit = true;
+                }
                 iD = value;
-                /*
-                   if (iD == 0)
-                   {
-                       NewFlower = new Flower();
-                   }
-                   else
-                   {
-                      // NewFlower = BD.GetFlowerByID(iD);
-                       Edit = true;
-                   }
-                */
-
             }
         }
         public event PropertyChangedEventHandler PropertyChanged;
@@ -69,7 +69,7 @@ namespace Shed_Shell__ListFlowers.MVVM.ModelView.edit
 
         public EditFlowerVM()
         {
-            GetCategoriesList();
+           
             if (BD.Get() == null)
             {
                 NewFlower = new Flower();
@@ -81,6 +81,19 @@ namespace Shed_Shell__ListFlowers.MVVM.ModelView.edit
                 Signal(nameof(SelectedCateg));
                 Edit = true;
             }
+            /*костыль бд
+            if (BD.Get() == null)
+            {
+                NewFlower = new Flower();
+            }
+            else
+            {
+                NewFlower = (Flower)BD.Get();
+                SelectedCateg = App.dboContext.Categories.FirstOrDefault(c => c.Id == NewFlower.CategoryFlowerId);
+                Signal(nameof(SelectedCateg));
+                Edit = true;
+            }
+            */
             Save = new Command(async () => {
 
                 BD.ChekNull(NewFlower);

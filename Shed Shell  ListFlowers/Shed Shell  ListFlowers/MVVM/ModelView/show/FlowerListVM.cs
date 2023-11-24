@@ -82,14 +82,17 @@ namespace Shed_Shell__ListFlowers.MVVM.ModelView.show
             });
             Edit = new CustomCommand<Flower>(async (item) =>
             {
+                /*костыль бд 
                 BD.ChekNull(item);
                 BD.Set(item);
-                await Shell.Current.GoToAsync($"Edit");
+                // await Shell.Current.GoToAsync($"Edit");
+                */
+                await Shell.Current.GoToAsync($"Edit?ToID={item.Id}");
                 GetDBFlowerList();
             });
             Add = new Command(async () =>
             {
-                await Shell.Current.GoToAsync($"Edit");
+                await Shell.Current.GoToAsync($"Edit?ToID={0}");
             });
         }
         internal void OnAppearing()

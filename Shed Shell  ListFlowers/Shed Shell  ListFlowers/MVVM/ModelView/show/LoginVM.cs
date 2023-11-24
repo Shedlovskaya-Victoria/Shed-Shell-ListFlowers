@@ -10,7 +10,7 @@ namespace Shed_Shell__ListFlowers.MVVM.ModelView.show
     {
         public LoginVM()
         {
-            AuthorizationComm = new Command(async () => {
+            AuthorizationComm = new Command(() => {
                 CheckMethod();
             });
         }
@@ -19,10 +19,6 @@ namespace Shed_Shell__ListFlowers.MVVM.ModelView.show
         public string Login { get; set; }
         public Command AuthorizationComm { get; private set; }
 
-        internal void OnAppearing()
-        {
-            ;
-        }
         async Task<bool> CheckAuthorization()
         {
             if (string.IsNullOrEmpty(Password))

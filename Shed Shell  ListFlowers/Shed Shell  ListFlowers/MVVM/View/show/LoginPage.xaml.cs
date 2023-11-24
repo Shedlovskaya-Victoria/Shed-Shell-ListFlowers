@@ -18,10 +18,5 @@ namespace Shed_Shell__ListFlowers
             InitializeComponent();
             //BindingContext = this;
         }
-        protected override void OnAppearing()
-        {
-            ((LoginVM)BindingContext).OnAppearing();
-        }
-      
     }
 }

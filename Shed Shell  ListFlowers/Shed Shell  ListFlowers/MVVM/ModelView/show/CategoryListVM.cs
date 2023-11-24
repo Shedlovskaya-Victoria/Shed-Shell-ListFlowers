@@ -54,13 +54,16 @@ namespace Shed_Shell__ListFlowers.MVVM.ModelView.show
             GetCategoriesList();
             */
             Add = new Command(async () => {
-                await Shell.Current.GoToAsync("EditCtg");
+                await Shell.Current.GoToAsync($"EditCtg?ToID={0}");
                 GetCategoriesList();
             });
             EditComm = new Command(async () => {
-                BD.ChekNull(SelectedCategory);
-                BD.Set(SelectedCategory);
-                await Shell.Current.GoToAsync("EditCtg");
+                /*котсыль бд
+               BD.ChekNull(SelectedCategory);
+               BD.Set(SelectedCategory);
+               await Shell.Current.GoToAsync("EditCtg");
+                */
+                await Shell.Current.GoToAsync($"EditCtg?ToID={SelectedCategory.Id}");
                 GetCategoriesList();
             });
             Delete = new Command(() => {

@@ -6,11 +6,32 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
 namespace Shed_Shell__ListFlowers.MVVM.ModelView.edit
 {
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    [QueryProperty(nameof(ID), "ToID")]
     public class EditCategoryVM : INotifyPropertyChanged
     {
+        private int iD;
+        public int ID
+        {
+            get => iD;
+            set
+            {
+                if (value == 0)
+                {
+                    EditFlower = new CategoryFlower();
+                }
+                else
+                {
+                    EditFlower = App.dboContext.Categories.FirstOrDefault(c => c.Id == value);
+                    Edit = true;
+                }
+                iD = value;
+            }
+        }
         private CategoryFlower editFlower;
         private bool Edit;
 
@@ -34,7 +55,7 @@ namespace Shed_Shell__ListFlowers.MVVM.ModelView.edit
 
         public EditCategoryVM()
         {
-
+            /*костыль бд
             if (BD.Get() == null)
             {
                 EditFlower = new CategoryFlower();
@@ -44,6 +65,7 @@ namespace Shed_Shell__ListFlowers.MVVM.ModelView.edit
                 EditFlower = (CategoryFlower)BD.Get();
                 Edit = true;
             }
+            */
             Save = new Command(() =>{
                 BD.ChekNull(EditFlower);
                 //  BD Bd = new BD();

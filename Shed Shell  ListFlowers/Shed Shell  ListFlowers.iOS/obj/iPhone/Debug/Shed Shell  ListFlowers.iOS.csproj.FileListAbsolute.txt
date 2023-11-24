@@ -92,3 +92,15 @@ C:\Users\Student\source\repos\Shed-Shell-ListFlowers\Shed Shell  ListFlowers\She
 C:\Users\Student\source\repos\Shed-Shell-ListFlowers\Shed Shell  ListFlowers\Shed Shell  ListFlowers.iOS\obj\iPhone\Debug\Shed Shell  ListFlowers.iOS.csproj.CopyComplete
 C:\Users\Student\source\repos\Shed-Shell-ListFlowers\Shed Shell  ListFlowers\Shed Shell  ListFlowers.iOS\obj\iPhone\Debug\Shed Shell  ListFlowers.iOS.exe
 C:\Users\Student\source\repos\Shed-Shell-ListFlowers\Shed Shell  ListFlowers\Shed Shell  ListFlowers.iOS\obj\iPhone\Debug\Shed Shell  ListFlowers.iOS.pdb
+C:\Users\Student\source\repos\Shed-Shell-ListFlowers\Shed Shell  ListFlowers\Shed Shell  ListFlowers.iOS\bin\iPhone\Debug\Microsoft.Data.SqlClient.dll
+C:\Users\Student\source\repos\Shed-Shell-ListFlowers\Shed Shell  ListFlowers\Shed Shell  ListFlowers.iOS\bin\iPhone\Debug\Microsoft.Data.SqlClient.pdb
+C:\Users\Student\source\repos\Shed-Shell-ListFlowers\Shed Shell  ListFlowers\Shed Shell  ListFlowers.iOS\bin\iPhone\Debug\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\Student\source\repos\Shed-Shell-ListFlowers\Shed Shell  ListFlowers\Shed Shell  ListFlowers.iOS\bin\iPhone\Debug\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\Student\source\repos\Shed-Shell-ListFlowers\Shed Shell  ListFlowers\Shed Shell  ListFlowers.iOS\bin\iPhone\Debug\Microsoft.Identity.Client.dll
+C:\Users\Student\source\repos\Shed-Shell-ListFlowers\Shed Shell  ListFlowers\Shed Shell  ListFlowers.iOS\bin\iPhone\Debug\Microsoft.Win32.Registry.dll
+C:\Users\Student\source\repos\Shed-Shell-ListFlowers\Shed Shell  ListFlowers\Shed Shell  ListFlowers.iOS\bin\iPhone\Debug\System.Configuration.ConfigurationManager.dll
+C:\Users\Student\source\repos\Shed-Shell-ListFlowers\Shed Shell  ListFlowers\Shed Shell  ListFlowers.iOS\bin\iPhone\Debug\System.Security.AccessControl.dll
+C:\Users\Student\source\repos\Shed-Shell-ListFlowers\Shed Shell  ListFlowers\Shed Shell  ListFlowers.iOS\bin\iPhone\Debug\System.Security.Permissions.dll
+C:\Users\Student\source\repos\Shed-Shell-ListFlowers\Shed Shell  ListFlowers\Shed Shell  ListFlowers.iOS\bin\iPhone\Debug\System.Security.Principal.Windows.dll
+C:\Users\Student\source\repos\Shed-Shell-ListFlowers\Shed Shell  ListFlowers\Shed Shell  ListFlowers.iOS\bin\iPhone\Debug\System.Security.SecureString.dll
+C:\Users\Student\source\repos\Shed-Shell-ListFlowers\Shed Shell  ListFlowers\Shed Shell  ListFlowers.iOS\bin\iPhone\Debug\System.Text.Encoding.CodePages.dll

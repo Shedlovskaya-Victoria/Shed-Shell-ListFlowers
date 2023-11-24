@@ -680,3 +680,10 @@ C:\Users\Student\source\repos\Shed-Shell-ListFlowers\Shed Shell  ListFlowers\She
 C:\Users\Student\source\repos\Shed-Shell-ListFlowers\Shed Shell  ListFlowers\Shed Shell  ListFlowers.Android\obj\Debug\130\stamp\_GenerateJavaStubs.stamp
 C:\Users\Student\source\repos\Shed-Shell-ListFlowers\Shed Shell  ListFlowers\Shed Shell  ListFlowers.Android\obj\Debug\130\stamp\_GeneratePackageManagerJava.stamp
 C:\Users\Student\source\repos\Shed-Shell-ListFlowers\Shed Shell  ListFlowers\Shed Shell  ListFlowers.Android\obj\Debug\130\stamp\_ResolveLibraryProjectImports.stamp
+C:\Users\Student\source\repos\Shed-Shell-ListFlowers\Shed Shell  ListFlowers\Shed Shell  ListFlowers.Android\obj\Debug\130\android\assets\Microsoft.CSharp.dll
+C:\Users\Student\source\repos\Shed-Shell-ListFlowers\Shed Shell  ListFlowers\Shed Shell  ListFlowers.Android\obj\Debug\130\android\assets\Microsoft.CSharp.pdb
+C:\Users\Student\source\repos\Shed-Shell-ListFlowers\Shed Shell  ListFlowers\Shed Shell  ListFlowers.Android\obj\Debug\130\android\assets\Microsoft.Data.SqlClient.dll
+C:\Users\Student\source\repos\Shed-Shell-ListFlowers\Shed Shell  ListFlowers\Shed Shell  ListFlowers.Android\obj\Debug\130\android\assets\Microsoft.Data.SqlClient.pdb
+C:\Users\Student\source\repos\Shed-Shell-ListFlowers\Shed Shell  ListFlowers\Shed Shell  ListFlowers.Android\obj\Debug\130\android\assets\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\Student\source\repos\Shed-Shell-ListFlowers\Shed Shell  ListFlowers\Shed Shell  ListFlowers.Android\obj\Debug\130\android\assets\System.IdentityModel.dll
+C:\Users\Student\source\repos\Shed-Shell-ListFlowers\Shed Shell  ListFlowers\Shed Shell  ListFlowers.Android\obj\Debug\130\android\assets\System.IdentityModel.pdb
